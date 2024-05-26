@@ -12,6 +12,11 @@ public struct Viewrito<Content, Returning>: View where Content: View, Returning:
     let content: () -> Content
     let returning: (Content) -> Returning
     
+    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder returning: @escaping (Content) -> Returning) {
+        self.content = content
+        self.returning = returning
+    }
+    
     public var body: some View {
         returning(content())
     }
