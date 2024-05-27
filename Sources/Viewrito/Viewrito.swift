@@ -8,16 +8,22 @@
 import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct Viewrito<Content, Returning>: View where Content: View, Returning: View {
+public struct Viewrito<Content, Modified>: View where Content: View, Modified: View {
     let content: () -> Content
-    let returning: (Content) -> Returning
+    let modified: (Content) -> Modified
     
-    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder returning: @escaping (Content) -> Returning) {
+    public init(@ViewBuilder content: @escaping () -> Content, @ViewBuilder modified: @escaping (Content) -> Modified) {
         self.content = content
-        self.returning = returning
+        self.modified = modified
     }
     
     public var body: some View {
-        returning(content())
+        let content = content()
+        let modified = modified(content)
+        if modified.isEmpty {
+            content
+        } else {
+            modified
+        }
     }
 }
