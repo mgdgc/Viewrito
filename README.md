@@ -65,7 +65,7 @@ struct ContentView: View {
     var body: some View {
         Viewrito {
             Text("Hello, world! 🌯")
-        } returning: { text in
+        } modified: { text in
             if #available(iOS 17.0, *) {
                 text.foregroundStyle(Color.blue)
             } else {
