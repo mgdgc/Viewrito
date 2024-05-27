@@ -1,12 +1,8 @@
 # Viewrito
 
----
-
 🌯 Viewrito makes applying view modifiers in SwiftUI easier.
 
 ## When To Use
-
----
 
 We all love the beautiful and marvelous SwiftUI, but we've likely all experienced hitting the wall of iOS version compatibility issues.
 
@@ -59,8 +55,6 @@ The idea is to simplify this duplicate code and make it prettier.
 
 ## How To Use
 
----
-
 ### Using `Viewrito` View
 
 ```swift
@@ -104,8 +98,6 @@ struct ContentView: View {
 
 ## Installation
 
----
-
 - **Swift Package Manager**
 
 ```
@@ -113,7 +105,5 @@ https://github.com/mgdgc/Viewrito.git
 ```
 
 ## License
-
----
 
 [MIT License](https://github.com/mgdgc/Viewrito/blob/main/LICENSE)
